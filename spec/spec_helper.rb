@@ -1,5 +1,6 @@
 require "bundler/setup"
-require "acts/as/permissible"
+require "acts-as-permissible"
+require 'database_cleaner'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -12,3 +13,5 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
